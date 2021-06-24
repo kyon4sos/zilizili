@@ -4,6 +4,7 @@ import 'package:psite/pages/base_page.dart';
 import 'package:psite/pages/channel_page.dart';
 import 'package:psite/pages/home_page.dart';
 import 'package:psite/pages/shopping_page.dart';
+import 'package:psite/pages/video_detail.dart';
 
 void main() {
   runApp(MyApp());
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
           "home": (BuildContext context) => HomePage(),
           "chancel": (BuildContext context) => HomePage(),
           "follow": (BuildContext context) => ChannelPage(),
-          "shopping": (BuildContext context) => ShoppingPage()
+          "shopping": (BuildContext context) => ShoppingPage(),
+          "video-detail": (BuildContext ctx) => VideoDetail()
         },
       ),
     );

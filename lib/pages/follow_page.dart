@@ -27,6 +27,12 @@ class FollowPage extends AbsBasePage {
 
   @override
   State<StatefulWidget> createState() => _FollowPageState();
+
+  @override
+  Widget buildAppbarTitle() {
+    // TODO: implement buildAppbarTitle
+    return Center();
+  }
 }
 
 class _FollowPageState extends State<FollowPage> {

@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:psite/pages/channel_page.dart';
@@ -50,45 +51,118 @@ class _BasePageState extends State<BasePage> {
   }
 
   buildAppBar(int idx) {
+    AppBar appBar = AppBar();
     List<Widget> _actions = [];
-    _actions.addAll(absBasePages.map((e) => e.buildAppbarAction()));
-    return AppBar(
-      actions: [
-        Expanded(
-            child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Wrap(
-              children: [
-                Container(
-                  child: IconButton(
-                    icon: Icon(Icons.menu),
-                    onPressed: () {
-                      _scaffoldKey.currentState!.openDrawer();
-                    },
-                  ),
-                ),
-                CircleAvatar(
+    List<Widget> _title = [];
+    List<Widget> _leading = [
+      Container(
+        child: Stack(children: [
+          Positioned(
+            top: 8,
+            left: -10,
+            child: IconButton(
+              onPressed: () {
+                _scaffoldKey.currentState!.openDrawer();
+              },
+              icon: Icon(Icons.menu),
+            ),
+          ),
+          Positioned(
+              top: 10,
+              left: 20,
+              child: Container(
+                color: Colors.green,
+                child: CircleAvatar(
                   radius: 20.0,
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(40),
+                    borderRadius: BorderRadius.circular(100),
                     child: Image.network(
                       avatarUrl,
                     ),
                   ),
                 ),
-              ],
-            ),
-            Wrap(
-              children: [],
-            ),
-            Container(
-              child: _actions[idx],
-            ),
-          ],
-        ))
-      ],
+              )),
+          Positioned(
+              top: appBar.toolbarHeight,
+              left: 20,
+              child: Container(
+                child: CircleAvatar(
+                  radius: 20.0,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(100),
+                    child: Image.network(
+                      avatarUrl,
+                    ),
+                  ),
+                ),
+              )),
+        ]),
+      ),
+    ];
+    _actions.addAll(absBasePages.map((e) => e.buildAppbarAction()));
+    _title.addAll(absBasePages.map((e) => e.buildAppbarTitle()));
+    appBar = AppBar(
+      // leading: _leading[0],
+      title: Text("首页"),
+      centerTitle: true,
+      actions: [_actions[idx]],
+      automaticallyImplyLeading: false,
+      // actions: [
+      //   Expanded(
+      //       child: Container(
+      //     color: Colors.amberAccent,
+      //     child: Row(
+      //       crossAxisAlignment: CrossAxisAlignment.center,
+      //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //       children: [
+      //         Container(
+      //             color: Colors.green,
+      //             child: CircleAvatar(
+      //               radius: 20.0,
+      //               child: ClipRRect(
+      //                 borderRadius: BorderRadius.circular(100),
+      //                 child: Image.network(
+      //                   avatarUrl,
+      //                 ),
+      //               ),
+      //             )),
+      //         // Wrap(
+      //         //   direction: Axis.horizontal,
+      //         //   crossAxisAlignment: WrapCrossAlignment.start,
+      //         //   children: [
+      //         //     Container(
+      //         //       child: IconButton(
+      //         //         icon: Icon(Icons.menu),
+      //         //         onPressed: () {
+      //         //           _scaffoldKey.currentState!.openDrawer();
+      //         //         },
+      //         //       ),
+      //         //     ),
+      //         //     Container(
+      //         //       color: Colors.green,
+      //         //       child: CircleAvatar(
+      //         //         radius: 20.0,
+      //         //         child: ClipRRect(
+      //         //           borderRadius: BorderRadius.circular(100),
+      //         //           child: Image.network(
+      //         //             avatarUrl,
+      //         //           ),
+      //         //         ),
+      //         //       ),
+      //         //     )
+      //         //   ],
+      //         // ),
+      //
+      //         Row(
+      //           mainAxisAlignment: MainAxisAlignment.end,
+      //           children: [_actions[idx]],
+      //         ),
+      //       ],
+      //     ),
+      //   ))
+      // ],
     );
+    return appBar;
   }
 
   buildBody(int idx) {

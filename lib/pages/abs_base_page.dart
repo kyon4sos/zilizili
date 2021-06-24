@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 abstract class AbsBasePage extends StatefulWidget {
   Widget buildAppbarAction();
-
+  Widget buildAppbarTitle();
   BottomNavigationBarItem buildNavBarItem();
 }
 

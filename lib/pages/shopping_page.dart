@@ -12,13 +12,7 @@ class ShoppingPage extends AbsBasePage {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Container(
-            margin: EdgeInsets.only(right: 34),
-            child: Text(
-              "会员购",
-              style: TextStyle(fontSize: 20, color: Colors.white),
-            ),
-          ),
-          Container(
+            color: Colors.grey,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -39,16 +33,7 @@ class ShoppingPage extends AbsBasePage {
   }
 
   @override
-  Widget buildBody() {
-    // TODO: implement buildBody
-    return Center(
-      child: Text("会员购"),
-    );
-  }
-
-  @override
   BottomNavigationBarItem buildNavBarItem() {
-    // TODO: implement buildNavBarItem
     return BottomNavigationBarItem(
         label: "频道", icon: Icon(Icons.shopping_cart_outlined));
   }
@@ -57,6 +42,17 @@ class ShoppingPage extends AbsBasePage {
   State<StatefulWidget> createState() => _ShoppingPageState();
 
   void onPressed() {}
+
+  @override
+  Widget buildAppbarTitle() {
+    // TODO: implement buildAppbarTitle
+    return Container(
+      child: Text(
+        "会员购",
+        style: TextStyle(fontSize: 20, color: Colors.white),
+      ),
+    );
+  }
 }
 
 class _ShoppingPageState extends State<ShoppingPage> {

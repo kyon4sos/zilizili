@@ -17,6 +17,12 @@ class ChannelPage extends AbsBasePage {
 
   @override
   State<StatefulWidget> createState() => _ChannelPageState();
+
+  @override
+  Widget buildAppbarTitle() {
+    // TODO: implement buildAppbarTitle
+    return Text("频道");
+  }
 }
 
 class _ChannelPageState extends State<ChannelPage> {
