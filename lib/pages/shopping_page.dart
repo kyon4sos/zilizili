@@ -12,7 +12,6 @@ class ShoppingPage extends AbsBasePage {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Container(
-            color: Colors.grey,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [

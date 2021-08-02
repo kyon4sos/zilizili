@@ -5,7 +5,7 @@ import 'package:dio/dio.dart';
 import 'model/video_model.dart';
 
 var options = BaseOptions(
-  baseUrl: 'http://192.168.14.40:8080',
+  baseUrl: 'http://172.16.82.50:3000',
   connectTimeout: 10000,
   receiveTimeout: 10000,
 );
@@ -17,19 +17,20 @@ class Mock {
 
   Future<List<VideoModel>> videosFactory({int startIndex = 1}) async {
     Response res =
-        await dio.get("/list", queryParameters: {"page": startIndex});
+        await dio.get("/video", queryParameters: {"page": startIndex});
     List<VideoModel> _res = [];
     print("======" + res.data["data"].runtimeType.toString());
     if (res.data["code"] == 20000) {
       List<dynamic> _list = res.data["data"];
       _list.forEach((ele) {
+        print(ele["thumbnail"]);
         var video = VideoModel(
             id: ele["id"],
             title: ele["title"],
             desc: "",
             tags: tags[Random.secure().nextInt(tags.length - 1)],
             url: "",
-            poster: ele["image"]);
+            poster: ele["thumbnail"]);
         _res.add(video);
       });
     }

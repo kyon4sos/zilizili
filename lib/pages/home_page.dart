@@ -202,10 +202,10 @@ class _HomePageState extends State<HomePage>
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(6), topRight: Radius.circular(6)),
                 child: Image.network(
-                  videoModel.url,
+                  videoModel.poster,
                   width: width,
                   height: height,
-                  fit: BoxFit.fill,
+                  fit: BoxFit.fitWidth,
                 ),
               ),
             ),

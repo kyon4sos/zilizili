@@ -4,7 +4,7 @@ class VideoModel {
   String title;
   String tags;
   String videoLength;
-  String id;
+  int id;
   String poster;
   int playedCount = 0;
   VideoModel(
