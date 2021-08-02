@@ -1,16 +1,13 @@
-# psite
+# flutter_application_1
 
-A new Flutter project.
+A  Flutter project.
 
-## Getting Started
+## ScreenShot
 
-This project is a starting point for a Flutter application.
+<img src="http://qw5zaufiu.hn-bkt.clouddn.com/Snipaste_2021-08-02_11-54-03.png" style="zoom:33%;" />
 
-A few resources to get you started if this is your first Flutter project:
+<img src="http://qw5zaufiu.hn-bkt.clouddn.com/Snipaste_2021-08-02_11-29-35.png" style="zoom:33%;" />
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+<img src="http://qw5zaufiu.hn-bkt.clouddn.com/Snipaste_2021-08-02_11-54-56.png" style="zoom:33%;" />
