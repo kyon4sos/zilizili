@@ -19,7 +19,6 @@ class Mock {
     Response res =
         await dio.get("/video", queryParameters: {"page": startIndex});
     List<VideoModel> _res = [];
-    print("======" + res.data["data"].runtimeType.toString());
     if (res.data["code"] == 20000) {
       List<dynamic> _list = res.data["data"];
       _list.forEach((ele) {
